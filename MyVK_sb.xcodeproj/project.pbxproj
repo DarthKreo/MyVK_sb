@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		C0738D6F2541A8D0007BC8A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738D6E2541A8D0007BC8A3 /* AppDelegate.swift */; };
 		C0738D712541A8D0007BC8A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738D702541A8D0007BC8A3 /* SceneDelegate.swift */; };
-		C0738D732541A8D0007BC8A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738D722541A8D0007BC8A3 /* ViewController.swift */; };
-		C0738D762541A8D0007BC8A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0738D742541A8D0007BC8A3 /* Main.storyboard */; };
 		C0738D782541A8D5007BC8A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0738D772541A8D5007BC8A3 /* Assets.xcassets */; };
 		C0738D7B2541A8D5007BC8A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0738D792541A8D5007BC8A3 /* LaunchScreen.storyboard */; };
+		C0738D852541A9D2007BC8A3 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738D842541A9D2007BC8A3 /* LoginFormController.swift */; };
+		C0738D8D2541AB3A007BC8A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0738D8C2541AB3A007BC8A3 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C0738D6B2541A8D0007BC8A3 /* MyVK_sb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyVK_sb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0738D6E2541A8D0007BC8A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0738D702541A8D0007BC8A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C0738D722541A8D0007BC8A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C0738D752541A8D0007BC8A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0738D772541A8D5007BC8A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0738D7A2541A8D5007BC8A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0738D7C2541A8D5007BC8A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0738D842541A9D2007BC8A3 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
+		C0738D8C2541AB3A007BC8A3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,31 @@
 		C0738D6D2541A8D0007BC8A3 /* MyVK_sb */ = {
 			isa = PBXGroup;
 			children = (
+				C0738D892541AA03007BC8A3 /* Storyboard */,
+				C0738D872541A9E0007BC8A3 /* Support */,
 				C0738D6E2541A8D0007BC8A3 /* AppDelegate.swift */,
 				C0738D702541A8D0007BC8A3 /* SceneDelegate.swift */,
-				C0738D722541A8D0007BC8A3 /* ViewController.swift */,
-				C0738D742541A8D0007BC8A3 /* Main.storyboard */,
-				C0738D772541A8D5007BC8A3 /* Assets.xcassets */,
-				C0738D792541A8D5007BC8A3 /* LaunchScreen.storyboard */,
-				C0738D7C2541A8D5007BC8A3 /* Info.plist */,
+				C0738D842541A9D2007BC8A3 /* LoginFormController.swift */,
 			);
 			path = MyVK_sb;
+			sourceTree = "<group>";
+		};
+		C0738D872541A9E0007BC8A3 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				C0738D7C2541A8D5007BC8A3 /* Info.plist */,
+				C0738D772541A8D5007BC8A3 /* Assets.xcassets */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		C0738D892541AA03007BC8A3 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				C0738D792541A8D5007BC8A3 /* LaunchScreen.storyboard */,
+				C0738D8C2541AB3A007BC8A3 /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +140,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0738D8D2541AB3A007BC8A3 /* Main.storyboard in Resources */,
 				C0738D7B2541A8D5007BC8A3 /* LaunchScreen.storyboard in Resources */,
 				C0738D782541A8D5007BC8A3 /* Assets.xcassets in Resources */,
-				C0738D762541A8D0007BC8A3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0738D732541A8D0007BC8A3 /* ViewController.swift in Sources */,
+				C0738D852541A9D2007BC8A3 /* LoginFormController.swift in Sources */,
 				C0738D6F2541A8D0007BC8A3 /* AppDelegate.swift in Sources */,
 				C0738D712541A8D0007BC8A3 /* SceneDelegate.swift in Sources */,
 			);
@@ -146,14 +162,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C0738D742541A8D0007BC8A3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C0738D752541A8D0007BC8A3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C0738D792541A8D5007BC8A3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,7 +296,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 564HW78Z23;
-				INFOPLIST_FILE = MyVK_sb/Info.plist;
+				INFOPLIST_FILE = MyVK_sb/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +315,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 564HW78Z23;
-				INFOPLIST_FILE = MyVK_sb/Info.plist;
+				INFOPLIST_FILE = MyVK_sb/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
