@@ -13,6 +13,20 @@
 		C0738D7B2541A8D5007BC8A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0738D792541A8D5007BC8A3 /* LaunchScreen.storyboard */; };
 		C0738D852541A9D2007BC8A3 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738D842541A9D2007BC8A3 /* LoginFormController.swift */; };
 		C0738D8D2541AB3A007BC8A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0738D8C2541AB3A007BC8A3 /* Main.storyboard */; };
+		C0738D9325433D2C007BC8A3 /* MyGroupsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738D9225433D2C007BC8A3 /* MyGroupsTable.swift */; };
+		C0738D9725433D43007BC8A3 /* AllGroupsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738D9625433D43007BC8A3 /* AllGroupsTable.swift */; };
+		C0738D9A25433D56007BC8A3 /* MyFriendsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738D9925433D56007BC8A3 /* MyFriendsTable.swift */; };
+		C0738D9E25433D7B007BC8A3 /* FriendFotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738D9D25433D7B007BC8A3 /* FriendFotoCollection.swift */; };
+		C0738DA225433DB4007BC8A3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738DA125433DB4007BC8A3 /* Model.swift */; };
+		C0738DAC25433EFF007BC8A3 /* DefaulCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738DAA25433EFF007BC8A3 /* DefaulCell.swift */; };
+		C0738DAD25433EFF007BC8A3 /* DefaulCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0738DAB25433EFF007BC8A3 /* DefaulCell.xib */; };
+		C0738DB4254B167D007BC8A3 /* FotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738DB3254B167D007BC8A3 /* FotoCell.swift */; };
+		C0738DC3254DB50E007BC8A3 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738DC2254DB50E007BC8A3 /* Circle.swift */; };
+		C0738DEA2550339F007BC8A3 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738DE92550339F007BC8A3 /* NewsViewController.swift */; };
+		C0738DED25503904007BC8A3 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738DEC25503904007BC8A3 /* HeartButton.swift */; };
+		C0738DF125504EA6007BC8A3 /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738DF025504EA6007BC8A3 /* LikeControl.swift */; };
+		C0738E212554410E007BC8A3 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738E1F2554410E007BC8A3 /* NewsCell.swift */; };
+		C0738E222554410E007BC8A3 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0738E202554410E007BC8A3 /* NewsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +38,20 @@
 		C0738D7C2541A8D5007BC8A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0738D842541A9D2007BC8A3 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
 		C0738D8C2541AB3A007BC8A3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C0738D9225433D2C007BC8A3 /* MyGroupsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsTable.swift; sourceTree = "<group>"; };
+		C0738D9625433D43007BC8A3 /* AllGroupsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsTable.swift; sourceTree = "<group>"; };
+		C0738D9925433D56007BC8A3 /* MyFriendsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFriendsTable.swift; sourceTree = "<group>"; };
+		C0738D9D25433D7B007BC8A3 /* FriendFotoCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendFotoCollection.swift; sourceTree = "<group>"; };
+		C0738DA125433DB4007BC8A3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C0738DAA25433EFF007BC8A3 /* DefaulCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaulCell.swift; sourceTree = "<group>"; };
+		C0738DAB25433EFF007BC8A3 /* DefaulCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaulCell.xib; sourceTree = "<group>"; };
+		C0738DB3254B167D007BC8A3 /* FotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoCell.swift; sourceTree = "<group>"; };
+		C0738DC2254DB50E007BC8A3 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		C0738DE92550339F007BC8A3 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		C0738DEC25503904007BC8A3 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
+		C0738DF025504EA6007BC8A3 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
+		C0738E1F2554410E007BC8A3 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		C0738E202554410E007BC8A3 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +84,17 @@
 		C0738D6D2541A8D0007BC8A3 /* MyVK_sb */ = {
 			isa = PBXGroup;
 			children = (
-				C0738D892541AA03007BC8A3 /* Storyboard */,
-				C0738D872541A9E0007BC8A3 /* Support */,
 				C0738D6E2541A8D0007BC8A3 /* AppDelegate.swift */,
 				C0738D702541A8D0007BC8A3 /* SceneDelegate.swift */,
-				C0738D842541A9D2007BC8A3 /* LoginFormController.swift */,
+				C0738D8F25433CD5007BC8A3 /* InitialView */,
+				C0738E1A255437A7007BC8A3 /* News */,
+				C0738D9125433CFB007BC8A3 /* Groups */,
+				C0738D9025433CF2007BC8A3 /* Friends */,
+				C0738D892541AA03007BC8A3 /* Storyboard */,
+				C0738E1C255437ED007BC8A3 /* Cells */,
+				C0738E1D2554380F007BC8A3 /* CustomViews */,
+				C0738DA425433DC3007BC8A3 /* Data */,
+				C0738D872541A9E0007BC8A3 /* Support */,
 			);
 			path = MyVK_sb;
 			sourceTree = "<group>";
@@ -81,6 +115,70 @@
 				C0738D8C2541AB3A007BC8A3 /* Main.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		C0738D8F25433CD5007BC8A3 /* InitialView */ = {
+			isa = PBXGroup;
+			children = (
+				C0738D842541A9D2007BC8A3 /* LoginFormController.swift */,
+			);
+			path = InitialView;
+			sourceTree = "<group>";
+		};
+		C0738D9025433CF2007BC8A3 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				C0738D9925433D56007BC8A3 /* MyFriendsTable.swift */,
+				C0738D9D25433D7B007BC8A3 /* FriendFotoCollection.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		C0738D9125433CFB007BC8A3 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				C0738D9225433D2C007BC8A3 /* MyGroupsTable.swift */,
+				C0738D9625433D43007BC8A3 /* AllGroupsTable.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		C0738DA425433DC3007BC8A3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C0738DA125433DB4007BC8A3 /* Model.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C0738E1A255437A7007BC8A3 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				C0738DE92550339F007BC8A3 /* NewsViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		C0738E1C255437ED007BC8A3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C0738DB3254B167D007BC8A3 /* FotoCell.swift */,
+				C0738DAA25433EFF007BC8A3 /* DefaulCell.swift */,
+				C0738DAB25433EFF007BC8A3 /* DefaulCell.xib */,
+				C0738E1F2554410E007BC8A3 /* NewsCell.swift */,
+				C0738E202554410E007BC8A3 /* NewsCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C0738E1D2554380F007BC8A3 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				C0738DC2254DB50E007BC8A3 /* Circle.swift */,
+				C0738DEC25503904007BC8A3 /* HeartButton.swift */,
+				C0738DF025504EA6007BC8A3 /* LikeControl.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +238,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0738DAD25433EFF007BC8A3 /* DefaulCell.xib in Resources */,
 				C0738D8D2541AB3A007BC8A3 /* Main.storyboard in Resources */,
+				C0738E222554410E007BC8A3 /* NewsCell.xib in Resources */,
 				C0738D7B2541A8D5007BC8A3 /* LaunchScreen.storyboard in Resources */,
 				C0738D782541A8D5007BC8A3 /* Assets.xcassets in Resources */,
 			);
@@ -153,9 +253,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0738D9E25433D7B007BC8A3 /* FriendFotoCollection.swift in Sources */,
+				C0738D9725433D43007BC8A3 /* AllGroupsTable.swift in Sources */,
+				C0738DF125504EA6007BC8A3 /* LikeControl.swift in Sources */,
+				C0738D9325433D2C007BC8A3 /* MyGroupsTable.swift in Sources */,
+				C0738E212554410E007BC8A3 /* NewsCell.swift in Sources */,
+				C0738DEA2550339F007BC8A3 /* NewsViewController.swift in Sources */,
+				C0738DAC25433EFF007BC8A3 /* DefaulCell.swift in Sources */,
+				C0738D9A25433D56007BC8A3 /* MyFriendsTable.swift in Sources */,
+				C0738DED25503904007BC8A3 /* HeartButton.swift in Sources */,
 				C0738D852541A9D2007BC8A3 /* LoginFormController.swift in Sources */,
+				C0738DC3254DB50E007BC8A3 /* Circle.swift in Sources */,
 				C0738D6F2541A8D0007BC8A3 /* AppDelegate.swift in Sources */,
 				C0738D712541A8D0007BC8A3 /* SceneDelegate.swift in Sources */,
+				C0738DA225433DB4007BC8A3 /* Model.swift in Sources */,
+				C0738DB4254B167D007BC8A3 /* FotoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
