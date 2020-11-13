@@ -6,68 +6,88 @@
 //
 
 import UIKit
+import WebKit
 
 class LoginFormController: UIViewController {
+    
+    private lazy var myToken = Session.instance
+    private lazy var myInfo = NetworkService()
 
     // MARK: - Outlets
     
-    @IBOutlet weak var loginScroll: UIScrollView!
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var mainLabel: UILabel!
-    @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var loginField: UITextField!
-    @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var passwordField: UITextField!
-    
+    @IBOutlet weak var webView: WKWebView! {
+        didSet {
+            webView.navigationDelegate = self
+        }
+    }
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addTargets()
+        
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "oauth.vk.com"
+        urlComponents.path = "/authorize"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "client_id", value: "7660270"),
+            URLQueryItem(name: "display", value: "mobile"),
+            URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
+            URLQueryItem(name: "scope", value: "262150"),
+            URLQueryItem(name: "response_type", value: "token"),
+            URLQueryItem(name: "v", value: "5.85")]
+        
+        let request = URLRequest(url: urlComponents.url!)
+        webView.load(request)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
+
     
     //MARK: - Actions
-    
-    @IBAction func enterButton(_ sender: Any) {
-    }
+
 }
 
 // MARK: - Keyboard methods
 
-private extension LoginFormController {
-    @objc
-    func keyboardWasShown(notification: Notification) {
-        let info = notification.userInfo! as NSDictionary
-        let kbSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: kbSize.height, right: 0.0)
+extension LoginFormController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        guard let url = navigationResponse.response.url, url.path == "/blank.html",
+              let fragment = url.fragment else {
+                decisionHandler(.allow)
+                return
+        }
         
-        loginScroll.contentInset = contentInsets
-        loginScroll.scrollIndicatorInsets = contentInsets
-    }
-    
-    @objc
-    func keyboardWillBeHidden(notification: Notification) {
-        let contentInsets = UIEdgeInsets.zero
-        loginScroll.contentInset = contentInsets
-        loginScroll.scrollIndicatorInsets = contentInsets
-    }
-    
-    @objc
-    func hideKeyboard() {
-        loginScroll.endEditing(true)
+        let params = fragment
+            .components(separatedBy: "&")
+            .map { $0.components(separatedBy: "=")}
+            .reduce([String: String]()) { result, param in
+                var dict = result
+                let key = param[0]
+                let value = param[1]
+                dict[key] = value
+                return dict
+            }
+        
+        print(params)
+        guard let token = params ["access_token"], let userId = Int(params["user_id"]!) else {
+            decisionHandler(.cancel)
+            return
+        }
+        print(token, userId)
+        myToken.token = token
+        myToken.userId = userId
+        performSegue(withIdentifier: "LoginOk", sender: nil)
+        decisionHandler(.cancel)
+        
+        
+        myInfo.loadFriends()
+        myInfo.loadGroups()
+        myInfo.loadPhotos(owner_id: String(myToken.userId))
+        myInfo.searchGroups(byString: "music")
     }
 }
 
 // MARK: - addTargets
 
 private extension LoginFormController {
-    func addTargets() {
-        loginScroll.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
-    }
+
 }

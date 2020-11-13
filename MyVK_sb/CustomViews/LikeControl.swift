@@ -7,12 +7,18 @@
 
 import UIKit
 
-class LikeControl: UIControl {
+// MARK: - LikeControl
 
+class LikeControl: UIControl {
+    
+    //MARK: - Private properties
+    
     private lazy var likes = 56
     private lazy var likeButton = HeartButton()
     private lazy var likeCountLabel = UILabel()
     private lazy var stackView = UIStackView()
+    
+    // MARK: - Init
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,13 +42,11 @@ class LikeControl: UIControl {
         if !likeButton.isLiked {
             likes -= 1
             likeCountLabel.textColor = .black
-            likeCountLabel.text = String(likes) + " likes"
-            
         } else {
             likes += 1
             likeCountLabel.textColor = .red
-            likeCountLabel.text = String(likes) + " likes"
         }
+        likeCountLabel.text = String(likes) + Constants.likeCountLabelText
     }
 }
 
@@ -78,7 +82,15 @@ private extension LikeControl {
     
     func setupLikeCountLabel() {
         likeCountLabel.textColor = .black
-        likeCountLabel.text = String(likes) + " likes"
+        likeCountLabel.text = String(likes) + Constants.likeCountLabelText
         likeCountLabel.adjustsFontSizeToFitWidth = true
     }
 }
+
+// MARK: - Constants
+private extension LikeControl {
+    enum Constants {
+        static let likeCountLabelText: String = " likes"
+    }
+}
+

@@ -7,7 +7,11 @@
 
 import UIKit
 
+// MARK: - HeartButton
+
 class HeartButton: UIButton {
+    
+    //MARK: - Private properties
     
     private lazy var unlikedImage = UIImage(named: "heartempty")
     private lazy var likedImage = UIImage(named: "heart")
@@ -15,7 +19,11 @@ class HeartButton: UIButton {
     private lazy var unlikedScale: CGFloat = 0.7
     private lazy var likedScale: CGFloat = 1.3
     
+    // MARK: - Public properties
+    
     public var isLiked = false
+    
+    // MARK: - init
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,11 +36,15 @@ class HeartButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Public methods
+    
     @objc
     public func flipLikedState() {
         isLiked = !isLiked
         animate()
     }
+    
+    //MARK: - Private methods
     
     private func animate() {
         UIView.animate(withDuration: 0.1, animations: {

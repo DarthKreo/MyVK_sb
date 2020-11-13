@@ -7,6 +7,18 @@
 
 import Foundation
 
+// MARK: - Session singleton
+
+class Session {
+    
+    static let instance = Session()
+    
+    private init() {}
+    
+    var token: String = ""
+    var userId: Int = 0
+}
+
 // MARK: - CellsIds
 
 struct CellIds {
