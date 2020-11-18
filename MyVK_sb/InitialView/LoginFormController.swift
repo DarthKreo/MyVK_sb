@@ -46,7 +46,7 @@ class LoginFormController: UIViewController {
 
 }
 
-// MARK: - Keyboard methods
+// MARK: - WKNavigationDelegate
 
 extension LoginFormController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
@@ -77,17 +77,6 @@ extension LoginFormController: WKNavigationDelegate {
         myToken.userId = userId
         performSegue(withIdentifier: "LoginOk", sender: nil)
         decisionHandler(.cancel)
-        
-        
-        myInfo.loadFriends()
-        myInfo.loadGroups()
-        myInfo.loadPhotos(owner_id: String(myToken.userId))
-        myInfo.searchGroups(byString: "music")
     }
 }
 
-// MARK: - addTargets
-
-private extension LoginFormController {
-
-}

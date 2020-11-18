@@ -29,6 +29,7 @@
 		C0738E212554410E007BC8A3 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738E1F2554410E007BC8A3 /* NewsCell.swift */; };
 		C0738E222554410E007BC8A3 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0738E202554410E007BC8A3 /* NewsCell.xib */; };
 		C0738E28255E9280007BC8A3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738E27255E927F007BC8A3 /* NetworkService.swift */; };
+		C0D4153F2562AFDB00A9DE1E /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4153E2562AFDB00A9DE1E /* NetworkModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		C0738E1F2554410E007BC8A3 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		C0738E202554410E007BC8A3 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		C0738E27255E927F007BC8A3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		C0D4153E2562AFDB00A9DE1E /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
 		F8924522FAFB95E8B3E5FD12 /* Pods_MyVK_sb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyVK_sb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				C0738DA125433DB4007BC8A3 /* Model.swift */,
+				C0D4153E2562AFDB00A9DE1E /* NetworkModels.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				C0738D852541A9D2007BC8A3 /* LoginFormController.swift in Sources */,
 				C0738E28255E9280007BC8A3 /* NetworkService.swift in Sources */,
 				C0738DC3254DB50E007BC8A3 /* Circle.swift in Sources */,
+				C0D4153F2562AFDB00A9DE1E /* NetworkModels.swift in Sources */,
 				C0738D6F2541A8D0007BC8A3 /* AppDelegate.swift in Sources */,
 				C0738D712541A8D0007BC8A3 /* SceneDelegate.swift in Sources */,
 				C0738DA225433DB4007BC8A3 /* Model.swift in Sources */,

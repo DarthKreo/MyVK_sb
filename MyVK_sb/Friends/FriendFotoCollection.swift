@@ -6,16 +6,24 @@
 //
 
 import UIKit
+import Kingfisher
 
+// MARK: - FriendFotoCollection
 
 class FriendFotoCollection: UICollectionViewController {
     
+    //MARK: - Private properties
+    
     private lazy var reuseCell = CellIds.collectionCell
-    var avatarName = String()
+    private lazy var networkService = NetworkService()
+    private lazy var userPhotos = [Photo]()
+    public var userId = Int()
 
+    //MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getUserPhotos()
     }
 
     // MARK: UICollectionViewDataSource
@@ -26,45 +34,30 @@ class FriendFotoCollection: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return userPhotos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseCell, for: indexPath) as? FotoCell else { return UICollectionViewCell() }
+        cell.avatar.kf.setImage(with: URL(string: userPhotos[indexPath.row].url))
         
-        cell.avatar.image = UIImage(named: "maul")
         return cell
     }
+}
 
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
+private extension FriendFotoCollection {
+    func getUserPhotos() {
+        networkService.loadPhotos(owner_id: userId) { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error.localizedDescription)
+                case .success(let photos):
+                    self.userPhotos = photos
+                }
+                self.collectionView.reloadData()
+            }
+        }
     }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }

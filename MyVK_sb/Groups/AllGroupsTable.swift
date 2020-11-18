@@ -13,21 +13,20 @@ class AllGroupsTable: UITableViewController {
     
     //MARK: - Private properties
     
-    private lazy var cell = CellIds.tableCell
-    lazy var groups: [Object] = {
-        var array = [Object]()
-        for index in 0...Groups.names.count - 1 {
-            let element = Object(name: Groups.names[index], avatar: Groups.images[index])
-            array.append(element)
-        }
-        return array
-    }()
+    private lazy var cellId = CellIds.tableCell
+    private lazy var networkService = NetworkService()
+    lazy var groups = [Group]()
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var groupSearchBar: UISearchBar!
     
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupControlView()
+        groupSearchBar.delegate = self
     }
 }
 
@@ -35,9 +34,10 @@ class AllGroupsTable: UITableViewController {
 
 extension AllGroupsTable {
     func setupControlView() {
-        let nibCell = UINib(nibName: cell, bundle: nil)
-        self.tableView.register(nibCell, forCellReuseIdentifier: cell)
+        let nibCell = UINib(nibName: cellId, bundle: nil)
+        self.tableView.register(nibCell, forCellReuseIdentifier: cellId)
         self.tableView.rowHeight = 66
+        self.tableView.keyboardDismissMode = .onDrag
     }
 }
 
@@ -55,18 +55,36 @@ extension AllGroupsTable {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let
-                tableCell = tableView.dequeueReusableCell(withIdentifier: cell,
+                cell = tableView.dequeueReusableCell(withIdentifier: cellId,
                                                           for: indexPath) as? DefaulCell
         else { return UITableViewCell() }
         
-        tableCell.circleShadow.isHidden = true
-        tableCell.nameLabel.text = groups[indexPath.row].name
-        tableCell.avatarImage.image = UIImage(named: groups[indexPath.row].avatar)
+        cell.configure(for: groups[indexPath.row])
+        cell.avatarImage.layer.cornerRadius = (self.tableView.rowHeight - 20) / 2
         
-        return tableCell
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "addGroup", sender: self)
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension AllGroupsTable: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        networkService.searchGroups(byString: searchText) { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error.localizedDescription)
+                case .success(let groups):
+                    self.groups = groups
+                }
+                self.tableView.reloadData()
+            }
+        }
     }
 }

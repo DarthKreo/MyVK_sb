@@ -14,13 +14,15 @@ class MyGroupsTable: UITableViewController {
     //MARK: - Private properties
     
     private lazy var cellIdentifire = CellIds.tableCell
-    private lazy var myGroups = [Object]()
+    private lazy var myGroups = [Group]()
+    private lazy var networkService = NetworkService()
     
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupControlView()
+        getMyGroups()
     }
     
     //MARK: - Actions
@@ -30,7 +32,8 @@ class MyGroupsTable: UITableViewController {
             else { return }
             if let indexPath = allGroupsControl.tableView.indexPathForSelectedRow {
                 let group = allGroupsControl.groups[indexPath.row]
-                if !myGroups.contains(group) {
+                let myGroupsID = myGroups.map {$0.id}
+                if !myGroupsID.contains(group.id) {
                     myGroups.append(group)
                     tableView.reloadData()
                 }
@@ -46,6 +49,21 @@ extension MyGroupsTable {
         let nibCell = UINib(nibName: cellIdentifire, bundle: nil)
         self.tableView.register(nibCell, forCellReuseIdentifier: cellIdentifire)
         self.tableView.rowHeight = 66
+    }
+    
+    func getMyGroups() {
+        networkService.loadGroups { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error.localizedDescription)
+                case .success(let groups):
+                    self.myGroups = groups
+                }
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -66,9 +84,8 @@ extension MyGroupsTable {
                                                      for: indexPath) as? DefaulCell
         else { return UITableViewCell() }
         
-        cell.circleShadow.isHidden = true
-        cell.nameLabel.text = myGroups[indexPath.row].name
-        cell.avatarImage.image = UIImage(named: myGroups[indexPath.row].avatar)
+        cell.configure(for: myGroups[indexPath.row])
+        cell.avatarImage.layer.cornerRadius = (self.tableView.rowHeight - 20) / 2
         
         return cell
     }

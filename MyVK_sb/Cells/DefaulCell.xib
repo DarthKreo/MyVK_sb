@@ -27,17 +27,23 @@
                             <constraint firstAttribute="width" secondItem="UTs-uX-rBW" secondAttribute="height" multiplier="1:1" id="h6P-A3-1yP"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s02-Ch-uNU">
-                        <rect key="frame" x="48" y="0.0" width="272" height="44"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s02-Ch-uNU">
+                        <rect key="frame" x="58" y="0.0" width="262" height="44"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <font key="NSFont" size="18" name="Arial-BoldMT"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="UTs-uX-rBW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="1G2-FG-By0"/>
-                    <constraint firstItem="s02-Ch-uNU" firstAttribute="leading" secondItem="UTs-uX-rBW" secondAttribute="trailing" constant="10" id="Bbv-UL-ymt"/>
+                    <constraint firstItem="s02-Ch-uNU" firstAttribute="leading" secondItem="UTs-uX-rBW" secondAttribute="trailing" constant="20" id="Bbv-UL-ymt"/>
                     <constraint firstItem="s02-Ch-uNU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="NRO-xP-FZM"/>
                     <constraint firstAttribute="bottomMargin" secondItem="UTs-uX-rBW" secondAttribute="bottom" id="NYW-pF-UMZ"/>
                     <constraint firstAttribute="trailing" secondItem="s02-Ch-uNU" secondAttribute="trailing" id="bJD-9M-6mG"/>
@@ -55,7 +61,7 @@
                 <outlet property="circleShadow" destination="L8D-Gp-WsE" id="9rs-ri-u3k"/>
                 <outlet property="nameLabel" destination="s02-Ch-uNU" id="jof-iM-d5r"/>
             </connections>
-            <point key="canvasLocation" x="405.79710144927537" y="58.928571428571423"/>
+            <point key="canvasLocation" x="-14" y="63"/>
         </tableViewCell>
     </objects>
     <resources>
