@@ -40,13 +40,3 @@ struct Data {
     static let names = ["A Maul", "B Malak", "C Bane", "Darth Vader", "Darth Kreo", "Sidious", "Alex", "Bob"]
     static let avatars = ["maul", "malak", "bane"]
 }
-
-struct Object: Equatable {
-    let name: String
-    let avatar: String
-    
-    init(name: String, avatar: String) {
-        self.name = name
-        self.avatar = avatar
-    }
-}

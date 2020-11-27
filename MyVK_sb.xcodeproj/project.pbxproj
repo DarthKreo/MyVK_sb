@@ -30,6 +30,8 @@
 		C0738E222554410E007BC8A3 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0738E202554410E007BC8A3 /* NewsCell.xib */; };
 		C0738E28255E9280007BC8A3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0738E27255E927F007BC8A3 /* NetworkService.swift */; };
 		C0D4153F2562AFDB00A9DE1E /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4153E2562AFDB00A9DE1E /* NetworkModels.swift */; };
+		C0D4155A256BDE6600A9DE1E /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D41559256BDE6600A9DE1E /* RealmProvider.swift */; };
+		C0D41561256D51CE00A9DE1E /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D41560256D51CE00A9DE1E /* UIAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		C0738E202554410E007BC8A3 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		C0738E27255E927F007BC8A3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C0D4153E2562AFDB00A9DE1E /* NetworkModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
+		C0D41559256BDE6600A9DE1E /* RealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
+		C0D41560256D51CE00A9DE1E /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		F8924522FAFB95E8B3E5FD12 /* Pods_MyVK_sb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyVK_sb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -114,16 +118,13 @@
 			children = (
 				C0738D6E2541A8D0007BC8A3 /* AppDelegate.swift */,
 				C0738D702541A8D0007BC8A3 /* SceneDelegate.swift */,
-				C0738D8F25433CD5007BC8A3 /* InitialView */,
-				C0738E1A255437A7007BC8A3 /* News */,
-				C0738D9125433CFB007BC8A3 /* Groups */,
-				C0738D9025433CF2007BC8A3 /* Friends */,
+				C0D4155D256D50E500A9DE1E /* ViewControllers */,
 				C0738D892541AA03007BC8A3 /* Storyboard */,
-				C0738E1C255437ED007BC8A3 /* Cells */,
 				C0738E1D2554380F007BC8A3 /* CustomViews */,
+				C0D4155E256D514300A9DE1E /* NetworkLayer */,
 				C0738DA425433DC3007BC8A3 /* Data */,
+				C0D4155F256D51A600A9DE1E /* Extensions */,
 				C0738D872541A9E0007BC8A3 /* Support */,
-				C0738E27255E927F007BC8A3 /* NetworkService.swift */,
 			);
 			path = MyVK_sb;
 			sourceTree = "<group>";
@@ -176,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				C0738DA125433DB4007BC8A3 /* Model.swift */,
-				C0D4153E2562AFDB00A9DE1E /* NetworkModels.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -209,6 +209,36 @@
 				C0738DF025504EA6007BC8A3 /* LikeControl.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		C0D4155D256D50E500A9DE1E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C0738D8F25433CD5007BC8A3 /* InitialView */,
+				C0738D9125433CFB007BC8A3 /* Groups */,
+				C0738D9025433CF2007BC8A3 /* Friends */,
+				C0738E1A255437A7007BC8A3 /* News */,
+				C0738E1C255437ED007BC8A3 /* Cells */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C0D4155E256D514300A9DE1E /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				C0D41559256BDE6600A9DE1E /* RealmProvider.swift */,
+				C0738E27255E927F007BC8A3 /* NetworkService.swift */,
+				C0D4153E2562AFDB00A9DE1E /* NetworkModels.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		C0D4155F256D51A600A9DE1E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C0D41560256D51CE00A9DE1E /* UIAlertController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,8 +363,10 @@
 				C0738D9325433D2C007BC8A3 /* MyGroupsTable.swift in Sources */,
 				C0738E212554410E007BC8A3 /* NewsCell.swift in Sources */,
 				C0738DEA2550339F007BC8A3 /* NewsViewController.swift in Sources */,
+				C0D41561256D51CE00A9DE1E /* UIAlertController.swift in Sources */,
 				C0738DAC25433EFF007BC8A3 /* DefaulCell.swift in Sources */,
 				C0738D9A25433D56007BC8A3 /* MyFriendsTable.swift in Sources */,
+				C0D4155A256BDE6600A9DE1E /* RealmProvider.swift in Sources */,
 				C0738DED25503904007BC8A3 /* HeartButton.swift in Sources */,
 				C0738D852541A9D2007BC8A3 /* LoginFormController.swift in Sources */,
 				C0738E28255E9280007BC8A3 /* NetworkService.swift in Sources */,
